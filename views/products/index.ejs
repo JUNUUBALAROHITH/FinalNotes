@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"
+  ></script>
+
+  <script
+    src="https://kit.fontawesome.com/91abd10b8f.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <style>
+    .card{
+        margin: 1rem;
+    }
+    .butto{
+        display: flex;
+  justify-content: space-between;
+    }
+  </style>
+
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="/stylesheets/index.css" />
+    <title>All Products</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">My Notes</h1>
+    
+    
+    <a class="btn btn-info" href="/products/new">Add New Notes</a>
+    <div class="row">
+        
+        <% for(let product of products) { %>
+
+          <div class="card col-lg-3 col-md-4 col-sm-6 " >
+            
+            <div class="card-body overflow-hidden" style="height: 200px;" onclick="window.location.href = '/products/<%=product._id%>';">
+              <!-- <div class="card-body" style="height: 150px; overflow-y: auto;"> -->
+                <h5 class="card-title"><%= product.title %></h5>
+                <p class="card-text">
+                    <%= product.description %>
+                </p>
+            </div>
+        
+        
+        
+          </div>
+        <% } %>
+      </div>
+
+    
+</body>
+
+</html>
